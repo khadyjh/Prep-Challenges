@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function equalizeArray(arr) {\n    let arrObj = {};\n    let maxFreq = 0;\n    for (let num of arr) {\n     \n        if (arrObj[num]) {\n            arrObj[num] = arrObj[num] + 1\n                } else {\n                    arrObj[num] =1;\n                }\n    }\n \n    for (let value in arrObj) {\n        if (arrObj[value] > maxFreq) {\n            maxFreq = arrObj[value];\n        }\n        console.log(arrObj[value])\n    }\n \n    return (arr.length - maxFreq);\n    // Write your code here\n\n}\n"
+                "function equalizeArray(arr) {\n    let arrObj = {};\n    let maxFreq = 0;\n    for (let num of arr) {\n\n        if (arrObj[num]) {\n            arrObj[num] = arrObj[num] + 1\n        } else {\n            arrObj[num] = 1;\n        }\n    }\n\n    for (let value in arrObj) {\n        if (arrObj[value] > maxFreq) {\n            maxFreq = arrObj[value];\n        }\n        console.log(arrObj[value])\n    }\n\n    return (arr.length - maxFreq);\n    // Write your code here\n\n}\n"
             ],
             "outputs": []
         },
@@ -59,7 +59,14 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function squares(a, b) {\n\n    var lower = Math.ceil(Math.sqrt(a))\n\n    var higher = Math.floor(Math.sqrt(b))\n\n\n\n    if (lower > higher)\n\n        return 0\n\n\n\n    var count = 0;\n\n    for (var i = lower; i <= higher; i++) {\n\n        if (lower <= i * i <= higher) {\n\n            count++\n\n        }\n\n    }\n\n\n\n    return count\n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function squares(a, b) {\n    let count = 0;\n\n    if (a > b) {\n        // console.log(a)\n        return 0;\n    }\n\n    for (let i = a; i <= b; i++) {\n\n        if (Math.sqrt(i) % 1 == 0) {\n            //    console.log(i);\n\n            count += 1;\n            // console.log(count)\n        }\n\n\n    }\n\n    return count;\n\n\n}"
             ],
             "outputs": []
         }

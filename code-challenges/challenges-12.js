@@ -69,31 +69,50 @@ const oddFiltration = (arr) => {
 
 const cvsFiltration = (arr) => {
 
-    const techA=arr.filter(tech=>tech.tech=='JS' && tech.yearsOfExperience>4)
+    // const techA=arr.filter(tech=>tech.tech=='JS' && tech.yearsOfExperience>4)
     
-    const fullNameArray=techA.map(x =>
+    // const fullNameArray=techA.map(x =>
+    //     x.LastName!=null? `${x.firstName} ${x.LastName}` :  `${x.firstName} `
+    //     );
+    //     // newArray = techA.filter(x=>
+    //     //     x.LastName!=null? `${x.firstName} ${x.LastName}` :  `${x.firstName} ` );
+
+    //   techA.forEach(element => {
+    //     //   let obj=element.firstName +element.LastName +element.tech
+    //     //    newArray.fullName= element.LastName!=null? `${element.firstName} ${element.LastName}`:`${element.firstName} `;
+    //     //    newArray.tech=element.tech
+        
+    //     for (var member in element) delete element[member];
+    //     fullNameArray.forEach(elem=>
+    //         element['fullName']=elem  
+    //          )
+        
+    //     element['tech']="JS"
+    //   });
+        
+    
+
+
+    // return techA
+
+    const techA=cvs.filter(tech=>tech.tech)
+    
+    const fullNameArray=cvs.map(x =>
         x.LastName!=null? `${x.firstName} ${x.LastName}` :  `${x.firstName} `
         );
-        // newArray = techA.filter(x=>
-        //     x.LastName!=null? `${x.firstName} ${x.LastName}` :  `${x.firstName} ` );
 
-      techA.forEach(element => {
-        //   let obj=element.firstName +element.LastName +element.tech
-        //    newArray.fullName= element.LastName!=null? `${element.firstName} ${element.LastName}`:`${element.firstName} `;
-        //    newArray.tech=element.tech
+
+    let newArr=cvs.map(obj=> obj.tech)
+
+   techA.forEach((element,ind) => {
         
         for (var member in element) delete element[member];
-        fullNameArray.forEach(elem=>
-            element['fullName']=elem  
-             )
-        
-        element['tech']="JS"
-      });
-        
-    
+           element['full name']=fullNameArray[ind]
+           element['tech']=newArr[ind]
 
 
-    return techA
+    });
+  return techA
     // write your code here
 }
 
